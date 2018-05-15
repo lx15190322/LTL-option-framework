@@ -95,10 +95,19 @@ if __name__ == '__main__':
     dfa.prune_eff_transition()
     dfa.g_unsafe = 'obs'
 
+    print "transitions:"
+    print dfa.state_transitions
+    print "safe final:"
+    print dfa.final_states
+    print "sinks:"
+    print dfa.sink_states
+
     print "========================================"
 
     t0 = time.time()
     result = mdp.product(dfa, mdp)
+    print result.goal
+    print result.T
     result.plotKey = False
     result.SVI(1.0)
     t1 = time.time()

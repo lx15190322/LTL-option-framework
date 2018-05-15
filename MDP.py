@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 from pandas import *
 from copy import deepcopy as dcp
 
-# plotly dependencies
-import plotly.plotly as py
-import plotly.graph_objs as go
-import plotly
-from plotly import tools
-plotly.tools.set_credentials_file(username='SeanLau', api_key='d1fuOtEPoJU7V6GhntKN')
+# # plotly dependencies
+# import plotly.plotly as py
+# import plotly.graph_objs as go
+# import plotly
+# from plotly import tools
+# plotly.tools.set_credentials_file(username='SeanLau', api_key='d1fuOtEPoJU7V6GhntKN')
 
 '''
 Comment tags:
@@ -20,54 +20,72 @@ Comment tags:
 '''
 # Tool: geometric series function, called by self.transition_matrix()
 def GeoSeries(P, it):
-    sum = dcp(P)  # + np.identity(len(P))
-    for k in range(2, it):
+    sum = np.identity(len(P)) + dcp(P)  # + np.identity(len(P))
+    for k in range(2, it + 1):
         sum += np.linalg.matrix_power(dcp(P), k)
-
     return sum
 
 # API: calculating transition matrix for an option
-def transition_matrix_(S, goal, unsafe, interruptions, gamma, P, Pi, row, col): # write the correct transition probability according to the policy
+def transition_matrix_(S, goal, unsafe, interruptions, gamma, P, Pi, V, row, col): # write the correct transition probability according to the policy
 
+    H = {}
+    tau = 1.0
     # row, col = 6, 8
-    size  = row * col + 1 #l * w + sink
+    size = row * col + 1  # l * w + sink
     PP = np.zeros((size, size))
+    Vn = np.zeros(size)
+
+    HH = np.zeros(size)
     PP[0, 0] = 1.0
+    HH[0] = 0.0
+    Vn[0] = 0.0
     for state in S:
         s = tuple(state)
-        n = (s[0] - 1) * col + s[1] #(1,1) = 1, (2,1)=9
-
+        n = (s[0] - 1) * col + s[1]  # (1,1) = 1, (2,1)=9
+        Vn[n] = V[s]
         if s not in goal and s not in unsafe and s not in interruptions:
             PP[n, 0] = 1 - gamma
+
             for a in Pi[s]:
+
+                HH[n] += -tau * Pi[s][a] * np.log(Pi[s][a])
+
                 for nb in P[s, a]:
                     n_nb = (nb[0] - 1) * col + nb[1]
-                    PP[n, n_nb] += P[s, a][nb] * Pi[s][a] * gamma
+                    PP[n, n_nb] += gamma * Pi[s][a] * P[s, a][nb]
         else:
             PP[n, n] = 1.0
+            HH[n] = 0.0
 
     sums = GeoSeries(
         dcp(PP),
-        50)
+        100)
+
+    sum_entropy = dcp(sums).dot(HH)
 
     final = {}
 
-    result = sums
+    result = np.linalg.matrix_power(dcp(PP), 100)
+
+    # print result
     for state in S:
         s = tuple(state)
-        n = (s[0]-1) * col + s[1]
+        n = (s[0] - 1) * col + s[1]
 
         final[s] = {}
         line = []
         for state_ in S:
             s_ = tuple(state_)
-            n_ = (s_[0]-1) * col + s_[1]
+            n_ = (s_[0] - 1) * col + s_[1]
             line.append(result[n, n_])
         for g in goal:
-            ng = (g[0]-1) * col + g[1]
-            final[s][g] = result[n, ng]/sum(line)
+            ng = (g[0] - 1) * col + g[1]
+            # final[s][g] = result[n, ng]/sum(line)
+            final[s][g] = result[n, ng]
 
-    return final
+        H[s] = sum_entropy[n]
+
+    return final, H
 
 
 class MDP:
@@ -97,7 +115,7 @@ class MDP:
         self.Opt: MDP object, for composed option       e.g. self.Opt[id], id = (('g1', 'g2'), 'disjunction')
         self.AOpt: MDP object, for atomic option        e.g. self.AOpt[id], id = 'g1'
         self.dfa: DFA object
-        self.mdp: non product MDP object
+        self.mdp: plain MDP object
 
         '''
 
@@ -130,6 +148,7 @@ class MDP:
         self.init_R = {} # initial reward function
 
         self.P = {} # 1 step transition probabilities
+        self.H = {}
 
         self.Pi, self.Pi_ = {}, {} # policy and memory of last iteration policy
         self.Opt = {} # options library
@@ -296,7 +315,7 @@ class MDP:
             self.Opt[ID].SVI(100000000000)
             # print  "policy", ID, self.Opt[ID].Pi
 
-            self.Opt[ID].TransitionMatrix = transition_matrix_(
+            self.Opt[ID].TransitionMatrix, self.Opt[ID].H = transition_matrix_(
                 self.Opt[ID].S,
                 self.Opt[ID].goal,
                 self.Opt[ID].unsafe,
@@ -304,10 +323,12 @@ class MDP:
                 self.Opt[ID].gamma,
                 self.Opt[ID].P,
                 self.Opt[ID].Pi,
+                self.Opt[ID].V,
                 self.gridSize[0],
                 self.gridSize[1]
             )
 
+            print ID, self.Opt[ID].H
     # Tool: Composing value functions of two options for conjunction or disjunction
     def option_composition(self, ctype, Opt_list):
         result = {}
@@ -345,7 +366,7 @@ class MDP:
         plt.grid()
         plt.draw()
         # plt.show()
-        plt.savefig(name+'policy.png')
+        plt.savefig(name + 'policy.png')
         return
 
     # API: Generate atomic options from decomposition algorithm
@@ -734,11 +755,21 @@ class MDP:
 
     # Tool: sum operator in value iteration algorithm, called by self.SVI_option()
     def Sigma_opt(self, s, opt):
-
         # g = tuple(self.Opt[opt].goal[0])
+        # print opt
         total = 0
+        # print self.T
+        # if s in self.T:
+        # next = self.dfa.state_transitions[self.L[s[0]], s[1]]
+        # # print next
+        # if next not in self.dfa.sink_states and not next == s[1]:
+        #     # print next
+        #     return self.V_[s[0], next]
+
         if s[0] in self.Opt[opt].goal:
             return total
+
+        sample_g = self.Opt[opt].goal[0]
         # print s, opt
         for g in self.Opt[opt].goal:
             vlist = []
@@ -750,11 +781,15 @@ class MDP:
             v_avg = max(vlist)
             Po = self.Opt[opt].TransitionMatrix[s[0]][g]
 
+            # TODO: add entropy terms
             temp = Po * v_avg
             result = temp
             total += result #self.V_[g]
-        # if s == ((2, 8), 3):
-        #     print total
+        # print s
+        #     if s == ((3, 3), 3):
+        #         print "entropy",self.Opt[opt].H[s[0]] * self.V[g, s[1]] / self.Opt[opt].V[g], self.V[g, s[1]] / self.Opt[opt].V[g]
+                # print "mark", total
+        total += self.Opt[opt].H[s[0]] #* self.V[sample_g, s[1]] / self.Opt[opt].V[sample_g]
 
         return total
 
@@ -776,20 +811,22 @@ class MDP:
         diff = []
         val = []
         special = []
+        special2 = []
         diff.append(np.inner(V_current - V_last, V_current - V_last))
 
         v_flag = True
 
-        print self.P[((2,8),3),'S']
-        print self.P[((2, 8), 3), 'N']
-        print self.P[((2, 8), 3), 'W']
-        print self.P[((2, 8), 3), 'E']
+        # print self.P[((2, 8), 3), 'S']
+        # print self.P[((2, 8), 3), 'N']
+        # print self.P[((2, 8), 3), 'W']
+        # print self.P[((2, 8), 3), 'E']
         while np.inner(V_current - V_last, V_current - V_last) > threshold:
             if it > 20:
                 break
 
             val.append(np.linalg.norm(V_current))
-            special.append(self.V[(3, 3),0])
+            special.append(self.V[(3, 3), 0])
+            special2.append(self.V[(3, 3), 3])
 
             for s in self.S:
                 self.V_[s] = self.V[s]
@@ -803,19 +840,21 @@ class MDP:
                 # # print  "state # print :", s, tuple(s)
                 if s not in self.T:
 
-                    for a in self.A:
-                        if (tuple(s), a) in self.P:
-
-                            v = self.R[tuple(s), a] + self.gamma * self.Sigma_(tuple(s), a)
-                            self.Q[tuple(s)][a] = np.exp(v / tau) # softmax solution
+                    # for a in self.A:
+                    #     if (tuple(s), a) in self.P:
+                    #
+                    #         v = self.R[tuple(s), a] + self.gamma * self.Sigma_(tuple(s), a)
+                    #         self.Q[tuple(s)][a] = np.exp(v / tau) # softmax solution
 
                     for opt in self.Opt.keys():
                         os = tuple(s[0])
+
                         if set(opt[0]).intersection(self.dfa.state_info[s[1]]['safe']) == set([]):
                             continue
 
                         if tuple([tuple(s), opt]) not in self.R:
                             self.R[tuple(s), opt] = 0.0
+
 
                         v = self.R[tuple(s), opt] + self.Sigma_opt(s, opt)
 
@@ -828,6 +867,9 @@ class MDP:
                     if v_flag:
                         self.V[tuple(s)] = tau * np.log(sumQ)
 
+                    next = self.dfa.state_transitions[self.L[s[0]], s[1]]
+                    if next not in self.dfa.sink_states and not next == s[1]:
+                        self.V[tuple(s)] = self.V[s[0], next]
                 else:
                     if s not in self.unsafe:
                         self.V[tuple(s)], self.Pi[tuple(s)] = 100.0, None
@@ -841,7 +883,8 @@ class MDP:
 
             it += 1
         self.plot_map(it)
-        print  "option special point: ", special
+        print "option special point: ", special
+        print "option special point2:", special2
 
         self.hybrid_diff = diff
         self.hybrid_val = val
@@ -861,6 +904,7 @@ class MDP:
         val = []
         pi_diff = []
         special = []
+        special2 = []
 
         diff.append(np.inner(V_current - V_last, V_current - V_last))
 
@@ -873,6 +917,9 @@ class MDP:
 
             if tuple([(3, 3), 0]) in self.V:
                 special.append(self.V[(3, 3), 0])
+
+            if tuple([(3, 3), 3]) in self.V:
+                special2.append(self.V[(3, 3), 3])
 
             for s in self.S:
                 self.V_[tuple(s)] = self.V[tuple(s)]
@@ -919,6 +966,7 @@ class MDP:
 
             print "svi_record:", self.svi_record
             print "action special point: ", special
+            print "action special point2: ", special2
             # print len(self.V), self.V
         self.action_diff = diff
         self.action_val = val
@@ -941,6 +989,7 @@ class MDP:
             cs = tuple([ns, nq])
 
     # VIS: plotting heatmap using either matplotlib ot plotly to visualize value function for all options
+    '''
     def layer_plot(self, title, dir=None):
         z = {}
         for key in self.Opt:
@@ -1004,8 +1053,10 @@ class MDP:
         py.iplot(fig, filename=fname)
 
         return 0
+    '''
 
     # VIS: plot whole product state space value functions
+
     def plot_map(self, iteration):
         Aphi = self.dfa.state_info
         for q in Aphi:
@@ -1034,7 +1085,7 @@ class MDP:
                     temp[state[0] - 1, state[1] - 1] = 0.0
                 else:
                     temp[state[0] - 1, state[1] - 1] = self.V[tuple(state), q]
-            folder = '../whole system/option/'
+            folder = '../LTL-option-framework/'
             name = 'value function at automata state:'+ str(q) + " at it:" + str(iteration)
             fig = plt.figure()
             cax = plt.imshow(temp, cmap='hot', interpolation='nearest')
@@ -1042,7 +1093,9 @@ class MDP:
             # cbar.ax.set_yticklabels(['< -1', '0', '> 1'])  # vertically oriented colorbar
             plt.savefig(folder + name + ".png")  # "../DFA/comparing test/"
 
+
     # VIS: plotting single heatmap when necessary, used for debugging!!
+    '''
     def plot_heat(self, key, dir=None):
 
         g, q1, q2 = None, None, None
@@ -1094,7 +1147,7 @@ class MDP:
             filename=fname)
 
         return 0
-
+    '''
     # VIS: comparing the trend of two curves for any function or variable
     def plot_curve(self, trace1, trace2, name):
         plt.figure()
