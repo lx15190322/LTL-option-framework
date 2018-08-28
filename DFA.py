@@ -304,9 +304,9 @@ if __name__=='__main__':
     rabin_acc=[(J0,K0)]
     dra.add_rabin_acc(rabin_acc)
             
-    print dra.states
-    print dra.state_transitions
-    print dra.predecessor(1)
+    # print dra.states
+    # print dra.state_transitions
+    # print dra.predecessor(1)
 
     # print dra.get_transition()
     dra.toDot(__file__ + '_test')

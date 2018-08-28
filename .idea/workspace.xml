@@ -2,24 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6337f2f8-adb1-4c07-be64-746d2c3dbcd1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Grid_world_DFA.py" afterPath="$PROJECT_DIR$/Grid_world_DFA.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MDP.py" afterPath="$PROJECT_DIR$/MDP.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DFA" beforeDir="false" afterPath="$PROJECT_DIR$/DFA" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/DFA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid_world_DFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Grid_world_DFA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/MDP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:0 at it:2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:0 at it:7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:1 at it:2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:1 at it:7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:2 at it:2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:2 at it:7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:3 at it:2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:3 at it:7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:4 at it:2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/value function at automata state:4 at it:7.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1664443553">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="png" value="2" />
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="2" />
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="66" />
+          <entry key="py" value="742" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="808" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Grid_world_DFA.py" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1548">
-              <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+            <state relative-caret-position="420">
+              <caret line="157" column="43" lean-forward="true" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -27,39 +75,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MDP.py" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compare_result.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MDP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1059">
-              <caret line="791" column="45" lean-forward="true" selection-start-line="791" selection-start-column="45" selection-end-line="791" selection-end-column="45" />
+            <state relative-caret-position="286">
+              <caret line="1232" column="57" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#6164#8651#0" expanded="false" />
-                <element signature="e#14971#20114#0" expanded="false" />
-                <element signature="e#40603#40906#0" expanded="false" />
-                <marker date="1526407112505" expanded="false" signature="34870:37228" ph="..." />
-                <marker date="1526407112505" expanded="false" signature="38953:40464" ph="..." />
+                <element signature="e#21#39#0" expanded="true" />
+                <marker date="1535492001699" expanded="true" signature="42409:42418" ph="..." />
+                <marker date="1535492001699" expanded="true" signature="44118:44358" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DFA.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DFA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-432">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="4620">
+              <caret line="308" column="25" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="Julia File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>init_R</find>
       <find>v_flag</find>
+      <find>quiver</find>
+      <find>state</find>
+      <find>.L</find>
+      <find>split</find>
+      <find>print</find>
+      <find>print (</find>
+      <find>self.Pi[</find>
+      <find>hardmax</find>
     </findStrings>
+    <replaceStrings>
+      <replace># print</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,29 +136,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/DFA.py" />
+        <option value="$PROJECT_DIR$/tst.py" />
         <option value="$PROJECT_DIR$/Grid_world_DFA.py" />
         <option value="$PROJECT_DIR$/MDP.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1015" />
-    <option name="height" value="1924" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1116" />
+    <option name="y" value="485" />
+    <option name="width" value="1793" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -100,17 +161,21 @@
               <item name="LTL-option-framework" type="b2602c69:ProjectViewProjectNode" />
               <item name="LTL-option-framework" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="LTL-option-framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LTL-option-framework" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -125,7 +190,8 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Grid_world_DFA">
-    <configuration name="Grid_world_DFA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DFA" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -136,13 +202,38 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DFA.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Grid_world_DFA" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LTL-option-framework" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Grid_world_DFA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="MDP" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -153,25 +244,53 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LTL-option-framework" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MDP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Python.Grid_world_DFA" />
-      <item index="1" class="java.lang.String" itemvalue="Python.MDP" />
+    <configuration name="tst" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LTL-option-framework" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tst.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Grid_world_DFA" />
+      <item itemvalue="Python.MDP" />
+      <item itemvalue="Python.DFA" />
+      <item itemvalue="Python.tst" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.Grid_world_DFA" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MDP" />
+      <list>
+        <item itemvalue="Python.Grid_world_DFA" />
+        <item itemvalue="Python.tst" />
+        <item itemvalue="Python.MDP" />
+        <item itemvalue="Python.DFA" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -184,118 +303,258 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1015" height="1924" extended-state="6" />
+    <frame x="1116" y="485" width="1793" height="965" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.026600985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32948294" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948294" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39988998" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23151863" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Julia Document" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28797084" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42282608" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32928312" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.5768194" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="R Packages" order="5" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32938007" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34631148" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.42315573" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948294" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" weight="0.5768194" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.Opt[2].TransitionMatrix[(3,8)]" language="Python" />
+        <watch expression="mdp.P[(3,8),'E',(3,8)]" language="Python" />
+        <watch expression="mdp.P[(3,8),'E',(2,8)]" language="Python" />
+        <watch expression="mdp.P[(3,8),'E',(4,8)]" language="Python" />
+        <watch expression="mdp.P[(3,8),'E',(3,7)]" language="Python" />
+        <watch expression="len(mdp.L[p[2]])" language="Python" />
+        <watch expression="mdp.L[p[2]]" language="Python" />
+        <watch expression="new_P[new_s, new_a]" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>new_P[new_s, new_a]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.L[p[2]]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>len(mdp.L[p[2]])</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.P[(3,8),'E',(3,7)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.P[(3,8),'E',(4,8)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.P[(3,8),'E',(2,8)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.P[(3,8),'E',(3,8)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mdp.P[(3,8),'E',(3,9)]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>s_</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.V[(2,8),1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/value function at automata state:0 at it:18.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g23.png" />
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2,g3.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:22.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:22.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:22.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:22.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:22.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:6.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:6.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:6.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:7.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:6.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:6.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:23.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:23.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:23.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:23.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:23.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:7.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:5.png" />
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g3.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:2 at it:18.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:3 at it:18.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g1.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:4 at it:18.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/compare.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:5.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:39.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:39.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:39.png" />
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:39.png" />
+    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g2,disjunction.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:1 at it:18.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g1,disjunction.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DFA.py">
+    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g3,disjunction.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tst.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g2,g3,g2-g3,disjunction.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:44.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2-g3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:46.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4620">
+          <caret line="308" column="25" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/envs/MDP/lib/python3.6/importlib/_bootstrap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compare_result_normalized_reward.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+        <state relative-caret-position="420">
+          <caret line="157" column="43" lean-forward="true" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:0 at it:7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:1 at it:7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:3 at it:7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:4 at it:7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/value function at automata state:2 at it:7.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/compare_result.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/MDP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1059">
-          <caret line="791" column="45" lean-forward="true" selection-start-line="791" selection-start-column="45" selection-end-line="791" selection-end-column="45" />
+        <state relative-caret-position="286">
+          <caret line="1232" column="57" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6164#8651#0" expanded="false" />
-            <element signature="e#14971#20114#0" expanded="false" />
-            <element signature="e#40603#40906#0" expanded="false" />
-            <marker date="1526407112505" expanded="false" signature="34870:37228" ph="..." />
-            <marker date="1526407112505" expanded="false" signature="38953:40464" ph="..." />
+            <element signature="e#21#39#0" expanded="true" />
+            <marker date="1535492001699" expanded="true" signature="42409:42418" ph="..." />
+            <marker date="1535492001699" expanded="true" signature="44118:44358" ph="..." />
           </folding>
         </state>
       </provider>
