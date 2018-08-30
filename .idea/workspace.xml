@@ -2,25 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6337f2f8-adb1-4c07-be64-746d2c3dbcd1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DFA" beforeDir="false" afterPath="$PROJECT_DIR$/DFA" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/DFA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid_world_DFA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Grid_world_DFA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MDP.py" beforeDir="false" afterPath="$PROJECT_DIR$/MDP.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:0 at it:2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:0 at it:7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:1 at it:2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:1 at it:7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:2 at it:2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:2 at it:7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:3 at it:2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:3 at it:7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:4 at it:2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/value function at automata state:4 at it:7.png" beforeDir="false" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compare_composition.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" afterPath="$PROJECT_DIR$/.idea/LTL-option-framework.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,11 +51,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="Grid_world_DFA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="157" column="43" lean-forward="true" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compare_composition.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/compare_composition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="72" column="54" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -75,30 +73,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compare_result.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
+      <file leaf-file-name="MDP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MDP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="1232" column="57" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
+            <state relative-caret-position="2694">
+              <caret line="1232" column="57" lean-forward="false" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
               <folding>
                 <element signature="e#21#39#0" expanded="true" />
-                <marker date="1535492001699" expanded="true" signature="42409:42418" ph="..." />
-                <marker date="1535492001699" expanded="true" signature="44118:44358" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="DFA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DFA.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4620">
-              <caret line="308" column="25" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+              <caret line="308" column="25" lean-forward="false" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +100,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Julia File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -140,17 +132,28 @@
         <option value="$PROJECT_DIR$/tst.py" />
         <option value="$PROJECT_DIR$/Grid_world_DFA.py" />
         <option value="$PROJECT_DIR$/MDP.py" />
+        <option value="$PROJECT_DIR$/compare_composition.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1116" />
-    <option name="y" value="485" />
-    <option name="width" value="1793" />
-    <option name="height" value="965" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="194" />
+    <option name="y" value="281" />
+    <option name="width" value="1244" />
+    <option name="height" value="734" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -161,16 +164,12 @@
               <item name="LTL-option-framework" type="b2602c69:ProjectViewProjectNode" />
               <item name="LTL-option-framework" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="LTL-option-framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LTL-option-framework" type="462c0819:PsiDirectoryNode" />
-              <item name="result" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,9 +188,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Grid_world_DFA">
+  <component name="RunManager">
     <configuration name="DFA" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -202,17 +200,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LTL-option-framework" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DFA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="Grid_world_DFA" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -223,17 +217,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LTL-option-framework" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Grid_world_DFA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="MDP" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -244,17 +234,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LTL-option-framework" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MDP.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="tst" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="LTL-option-framework" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -265,29 +251,29 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LTL-option-framework" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tst.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.Grid_world_DFA" />
-      <item itemvalue="Python.MDP" />
-      <item itemvalue="Python.DFA" />
-      <item itemvalue="Python.tst" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.MDP" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Grid_world_DFA" />
+      <item index="2" class="java.lang.String" itemvalue="Python.DFA" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tst" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.Grid_world_DFA" />
-        <item itemvalue="Python.tst" />
-        <item itemvalue="Python.MDP" />
-        <item itemvalue="Python.DFA" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.tst" />
+        <item index="1" class="java.lang.String" itemvalue="Python.DFA" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Grid_world_DFA" />
+        <item index="3" class="java.lang.String" itemvalue="Python.MDP" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -303,51 +289,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1116" y="485" width="1793" height="965" extended-state="0" />
+    <frame x="7" y="23" width="1280" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23151863" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Julia Document" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28797084" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42282608" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="8" weight="0.32928312" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.5768194" />
-      <window_info anchor="right" id="R Graphics" order="4" />
-      <window_info anchor="right" id="R Packages" order="5" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32938007" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34631148" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42315573" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32948294" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Data View" order="3" weight="0.5768194" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -361,6 +324,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -430,6 +394,32 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2265">
+          <caret line="157" column="43" lean-forward="true" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4620">
+          <caret line="308" column="25" lean-forward="false" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MDP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18345">
+          <caret line="1232" column="57" lean-forward="false" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
+          <folding>
+            <element signature="e#21#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g23.png" />
     <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2,g3.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:22.png" />
@@ -450,111 +440,52 @@
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:23.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:7.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:5.png" />
-    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/compare.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:5.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:39.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:39.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:39.png" />
     <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:39.png" />
-    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g2,disjunction.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g1,disjunction.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g3,disjunction.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/tst.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
+          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composed_option_vis/Solution to goal-g2,g3,g2-g3,disjunction.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:44.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/single_option_vis/Solution to goal-g2-g3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:1 at it:46.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:0 at it:46.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:2 at it:46.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:3 at it:46.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result/value function at automata state:4 at it:46.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DFA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4620">
-          <caret line="308" column="25" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+          <caret line="308" column="25" lean-forward="false" selection-start-line="306" selection-start-column="17" selection-end-line="308" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/envs/MDP/lib/python3.6/importlib/_bootstrap.py">
+    <entry file="file://$USER_HOME$/anaconda3/envs/MDP/lib/python3.6/importlib/_bootstrap.py" />
+    <entry file="file://$PROJECT_DIR$/MDP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compare_result_normalized_reward.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="157" column="43" lean-forward="true" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
+        <state relative-caret-position="2694">
+          <caret line="1232" column="57" lean-forward="false" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#21#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compare_result.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MDP.py">
+    <entry file="file://$PROJECT_DIR$/Grid_world_DFA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="1232" column="57" selection-start-line="1232" selection-start-column="57" selection-end-line="1232" selection-end-column="57" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compare_composition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="72" column="54" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
           <folding>
-            <element signature="e#21#39#0" expanded="true" />
-            <marker date="1535492001699" expanded="true" signature="42409:42418" ph="..." />
-            <marker date="1535492001699" expanded="true" signature="44118:44358" ph="..." />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
