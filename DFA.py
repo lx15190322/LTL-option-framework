@@ -39,7 +39,7 @@ class DFA:
     def __init__(self, initial_state=None, alphabet=None, transitions= dict([]),final_states=None, memory=None):
         self.state_transitions = {}
         self.final_states = set([])
-        self.state_transitions=transitions
+        self.state_transitions = transitions
         if alphabet == None:
             self.alphabet=[]
         else:

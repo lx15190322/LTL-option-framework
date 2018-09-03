@@ -281,9 +281,7 @@ class MDP:
     def option_factory(self):
         # # print   self.Exp
         s_index = self.dfa.state_info
-        #TODO: add conjunction
-        # print  "state index is:",s_index
-
+        print (s_index)
         for q in s_index:
 
             id = s_index[q]['safe']
@@ -313,9 +311,6 @@ class MDP:
             optList = []
 
             for ap in id:
-                # if '-' in ap:
-                #     # add conjunction composition
-                #     continue
                 sumG += dcp(self.AOpt[ap].goal)
                 sumT += dcp(self.AOpt[ap].T)
                 sumUnsafe += dcp(self.AOpt[ap].unsafe)
@@ -383,15 +378,32 @@ class MDP:
 
         return dcp(result)
 
+    def simple_composition(self, Vlist, ctype):
+        result = {}
+        tau = 1.0
+
+        if ctype == 'disjunction':
+            for state in self.S:
+                s = tuple(state)
+                result[s] = tau*np.log(sum([np.exp(V[s]/tau) for V in Vlist])) #/ len(Opt_list)
+
+        if ctype == 'conjunction':
+            tau *= -1.0
+            for state in self.S:
+                s = tuple(state)
+                result[s] = tau * np.log(sum([np.exp(V[s] / tau) for V in Vlist]))  # / len(Opt_list)
+
+        self.V = dcp(result)
+
     def bubble(self, target):
         for round in range(len(target)):
             for i in range(len(target)):
-                if '-' in target[i] and i < len(target) - 1:
+                if ('&' in target[i] or '|' in target[i]) and i < len(target) - 1:
                     target[i], target[i+1] = target[i+1], target[i]
         return target
 
     # API: Generate atomic options from decomposition algorithm
-    def option_generation(self, dfa):
+    def option_generation(self, dfa, init={}):
 
         goals = dcp(self.Exp)
         del goals["phi"]
@@ -411,8 +423,10 @@ class MDP:
         for s in self.S:  # new_S
             if s not in self.wall_cord:  # new_wall
                 filtered_S.append(s)
-
+        print(goals)
         AOpt = {}
+        if not init == {}:
+            AOpt = dcp(init)
         # for qs in dfa.state_info.keys():
         opstacles = set([])
 
@@ -420,6 +434,8 @@ class MDP:
         goal_queue = self.bubble(list(goals.keys()))
 
         for exp in goal_queue:
+            if exp in init:
+                continue
 
             AOpt[exp] = MDP()
             AOpt[exp].ID = exp
@@ -451,9 +467,22 @@ class MDP:
                 for a in self.A:
                     if (s, a) in AOpt[exp].P:
                         AOpt[exp].R[s, a] = 0
-            if '-' in exp:
+            if '&' in exp:
                 ctype = 'conjunction'
-                optList = exp.split('-')
+                optList = exp.split('&')
+                AOpt[exp].V = self.option_composition(AOpt, filtered_S, ctype, optList, self.tau)
+                AOpt[exp].V_ = dcp(AOpt[exp].V)
+                for s in AOpt[exp].interruptions:
+                    AOpt[exp].V[tuple(s)] = 0.0
+                for s in AOpt[exp].unsafe:
+                    AOpt[exp].V[tuple(s)] = 0.0
+                for s in AOpt[exp].goal:
+                    AOpt[exp].V[tuple(s)] = 100.0
+
+                AOpt[exp].SVI(self.INFTY)
+            elif '|' in exp:
+                ctype = 'disjunction'
+                optList = exp.split('|')
                 AOpt[exp].V = self.option_composition(AOpt, filtered_S, ctype, optList, self.tau)
                 AOpt[exp].V_ = dcp(AOpt[exp].V)
                 for s in AOpt[exp].interruptions:
@@ -626,8 +655,7 @@ class MDP:
         true_new_s = []
 
         sink = "fail"
-        # print  "!!!!!!!!!transition probability"
-        # print  mdp.P
+
         for p in mdp.P.keys():
 
             for q in dfa.states:
@@ -652,7 +680,6 @@ class MDP:
                                 new_P[new_s, new_a][new_s_] = mdp.P[p]
                             # else:
                             #     print (p)
-
                         else:
                             new_s__ = (p[2], q)
                             new_P[new_s, new_a][new_s_] = mdp.P[p]
@@ -751,12 +778,12 @@ class MDP:
             self.goal = dcp(in_g)
 
     # Init: init state value function
-    def init_V(self):
+    def init_value_function(self):
         for state in self.S:
             s = tuple(state)
             if s not in self.V:
                 self.V[s], self.V_[s] = 0.0, 0.0
-            if state in self.goal:
+            if s in self.goal:
                 self.V[s], self.V_[s] = 100.0, 0.0
 
     # Init: generating 1 step transition probabilities for 2d grid world
@@ -803,6 +830,16 @@ class MDP:
                 # if s == (3,8) and a == 'E':
                 #     print ('!!')
         return
+
+    def trans_P(self):
+        temp = dcp(self.P)
+        self.P = {}
+        for key in temp:
+            initial = tuple([key[0], key[1]])
+            post = key[2]
+            if initial not in self.P:
+                self.P[initial] = {}
+            self.P[initial][post] = temp[key]
 
     # Tool: turning dictionary structure to vector
     def Dict2Vec(self, V, S):
@@ -941,6 +978,7 @@ class MDP:
 
                     # for opt in self.Opt.keys():
                     opt = self.Opt[s[1]].id
+                    # print (opt, s[1])
                         # os = tuple(s[0])
                         #
                         # if set(opt[0]).intersection(self.dfa.state_info[s[1]]['safe']) == set([]):
@@ -1008,6 +1046,7 @@ class MDP:
             # diff.append(np.inner(V_current - V_last, V_current - V_last))
 
             it += 1
+        print ("in total", it, "iterations cost")
         self.plot_map(it)
         print  ("option special point: ", special)
         print  ("option special point2:", special2)
@@ -1064,6 +1103,9 @@ class MDP:
                     for a in self.A:
                         if (tuple(s), a) in self.P:
 
+                            if (tuple(s), a) not in self.R:
+                                self.R[tuple(s), a] = 0
+
                             v = self.R[tuple(s), a] + self.gamma * self.Sigma_(tuple(s), a, self.V_)
                             # if self.R[tuple(s), a] > 0:
                                 # print  s, a, self.R[tuple(s), a]
@@ -1075,6 +1117,7 @@ class MDP:
                                 max_v, max_a = v, a
 
                     sumQ = sum(self.Q[tuple(s)].values())
+                    # print (self.Q[tuple(s)])
                     for choice in self.Q[tuple(s)]:
                         self.Pi[tuple(s)][choice] = self.Q[tuple(s)][choice] / sumQ
                     self.V[tuple(s)] = tau * np.log(sumQ)
@@ -1095,6 +1138,9 @@ class MDP:
             # print  "svi_record:", self.svi_record
             print  ("action special point: ", special)
             print  ("action special point2: ", special2)
+        # else:
+        #     print (self.V)
+
             # # print  len(self.V), self.V
         self.action_diff = diff
         self.action_val = val
@@ -1132,6 +1178,8 @@ class MDP:
 
                     for a in self.A:
                         if (tuple(s), a) in self.P:
+                            if (tuple(s), a) not in self.R:
+                                self.R[tuple(s), a] = 0
 
                             v = self.R[tuple(s), a] + self.gamma * self.Sigma_(tuple(s), a, V_)
                             # if self.R[tuple(s), a] > 0:
@@ -1189,7 +1237,7 @@ class MDP:
             s = tuple(state)
             if s not in V:
                 V[s], V_[s] = 0.0, 0.0
-            if state[1] == 4:
+            if state[1] == list(self.dfa.sink_states)[0]:
                 V[s], V_[s] = 1.0, 0.0
 
         V_current, V_last = self.Dict2Vec(V, self.S), self.Dict2Vec(V_, self.S)
@@ -1197,6 +1245,8 @@ class MDP:
         diff = []
         special = []
         diff.append(np.inner(V_current - V_last, V_current - V_last))
+
+        # print (Pi)
 
         while np.inner(V_current - V_last, V_current - V_last) > threshold:
             # self.plot_map(it)
@@ -1227,11 +1277,11 @@ class MDP:
         return V
         # return special
 
-    def compute_norm(self, V, V_):
+    def compute_norm(self, V, V_, level):
         V_current, V_last = self.Dict2Vec(V, self.S), self.Dict2Vec(V_, self.S)
         # norm = np.inner(V_current - V_last, V_current - V_last)
-        norm = np.linalg.norm(V_current - V_last, np.inf)
-        print('norm:', norm)
+        norm = np.linalg.norm(V_current - V_last, level)
+        print('norm level {}:'.format(level), norm)
 
 
     # VERIFICATION

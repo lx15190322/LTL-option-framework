@@ -31,8 +31,8 @@ digraph G { rankdir = LR
 	3->5[label = "g3"]
 	0->0[label = "g3"]
 	4->4[label = "g3"]
-	2->5[label = "g2-g3"]
-	0->0[label = "g2-g3"]
-	3->5[label = "g2-g3"]
-	4->5[label = "g2-g3"]
+	2->5[label = "g2&g3"]
+	0->0[label = "g2&g3"]
+	3->5[label = "g2&g3"]
+	4->5[label = "g2&g3"]
 }
