@@ -17,6 +17,7 @@ if __name__ == '__main__':
     obs = Action('obs')
     phi = Action('phi')
     whole = Action('whole')
+    trial_number = 100
 
     row, col = 6, 8
     i, j = range(1, row + 1), range(1, col + 1)
@@ -110,32 +111,48 @@ if __name__ == '__main__':
     result = mdp.product(dfa, mdp)
     result.plotKey = False
     curve['action'] = result.SVI(0.001)
+    t1 = time.time()
+
+    print("action time for task 1", t1 - t0)
     V_action = result.goal_probability(result.Pi, result.P, ((3, 3), 0), 0.001)
+
+    Policy = result.policy_evaluation(result.V)
+    print('rate for action is:', result.evaluation(Policy, result.P, ((3, 5), 0), trial=trial_number))
+
+    curve['optimal'], Policy_hard = result.Hardmax_SVI(0.001)
+    print('rate for baseline is:', result.evaluation(Policy_hard, result.P, ((3, 5), 0), trial=trial_number))
 
     t1 = time.time()
     result.AOpt = mdp.option_generation(dfa)
     t2 = time.time()
     result.option_factory()
-    # result.layer_plot()
-    # result.option_plot()
     t3 = time.time()
+    print("total time for learning the options:", t3 - t1)
 
     curve['option'] = result.SVI_option(0.001)
+    t4 = time.time()
+    print("option time for task 1", t4 - t3)
+
     Policy = result.policy_evaluation(result.V)
     V_option = result.goal_probability(Policy, result.P, ((3, 3), 0), 0.001)
-    # print('rate for option is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
+    print('rate for option is:', result.evaluation(Policy, result.P, ((3, 5), 0), trial=trial_number))
 
     t4 = time.time()
     curve['hybrid'] = result.SVI_option(0.001, hybrid = True)
+    print("hybrid time for task 1", time.time() - t4)
+
     Policy = result.policy_evaluation(result.V)
     V_hybrid = result.goal_probability(Policy, result.P, ((3, 3), 0), 0.001)
-    # print('rate for hybrid is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
+    print('rate for hybrid is:', result.evaluation(Policy, result.P, ((3, 5), 0), trial=trial_number))
     result.plot_curve(curve, 'compare_result_normalized_reward')
 
     result.compute_norm(V_action, V_option, 2)
     result.compute_norm(V_action, V_hybrid, 2)
     result.compute_norm(V_action, V_option, np.infty)
     result.compute_norm(V_action, V_hybrid, np.infty)
+
+    result.layer_plot()
+    result.option_plot()
 
 
 # ==================== task2
@@ -210,11 +227,20 @@ if __name__ == '__main__':
     result2 = mdp2.product(dfa2, mdp2)
     result2.plotKey = False
     curve2['action'] = result2.SVI(0.001)
-    V_action2 = result2.goal_probability(result2.Pi, result2.P, ((3, 3), 0), 0.001)
-
     t1 = time.time()
-    # print  "action time", t1 - t0
-    result2.AOpt = mdp.option_generation(dfa2, result.AOpt)
+
+    V_action2 = result2.goal_probability(result2.Pi, result2.P, ((3, 3), 0), 0.001)
+    Policy2 = result2.policy_evaluation(result2.V)
+
+    print ("action time for task 2", t1 - t0)
+    print('rate for action is:', result2.evaluation(Policy2, result2.P, ((3, 5), 0), trial=trial_number))
+
+    curve2['optimal'], Policy_hard2 = result2.Hardmax_SVI(0.001)
+    print('rate for baseline is:', result2.evaluation(Policy_hard2, result2.P, ((3, 5), 0), trial=trial_number))
+
+    result2.AOpt = mdp2.option_generation(dfa2, result.AOpt)
+
+
     # print (result2.AOpt.keys())
     # print (dfa2.alphabet)
     keys = dcp(list(result2.AOpt.keys()))
@@ -222,22 +248,28 @@ if __name__ == '__main__':
         if key not in dfa2.alphabet:
             result2.AOpt.pop(key)
     # print(result2.AOpt.keys())
-    t2 = time.time()
+
 
     result2.option_factory()
+    # t3 = time.time()
+
+    t2 = time.time()
+    curve2['option'] = result2.SVI_option(0.001)
     t3 = time.time()
 
+    print ("option time for task 2", t3 - t2)
 
-    curve2['option'] = result2.SVI_option(0.001)
     Policy2 = result2.policy_evaluation(result2.V)
     V_option2 = result2.goal_probability(Policy2, result2.P, ((3, 3), 0), 0.001)
-    # print('rate for option is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
+    print('rate for option is:', result2.evaluation(Policy2, result2.P, ((3, 5), 0), trial=trial_number))
 
     t4 = time.time()
     curve2['hybrid'] = result2.SVI_option(0.001, hybrid=True)
+    print("hybrid time for task 2", time.time()-t4)
+
     Policy2 = result2.policy_evaluation(result2.V)
     V_hybrid2 = result2.goal_probability(Policy2, result2.P, ((3, 3), 0), 0.001)
-    # print('rate for hybrid is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
+    print('rate for hybrid is:', result2.evaluation(Policy2, result2.P, ((3, 5), 0), trial=trial_number))
     result2.plot_curve(curve2, 'compare_result_normalized_reward2')
 
     result2.compute_norm(V_action2, V_option2, 2)
@@ -245,7 +277,6 @@ if __name__ == '__main__':
     result2.compute_norm(V_action2, V_option2, np.infty)
     result2.compute_norm(V_action2, V_hybrid2, np.infty)
     
-
 
 # task 3 ==============================
     g1_2 = Action('g1|g2')
@@ -316,11 +347,17 @@ if __name__ == '__main__':
     result3 = mdp3.product(dfa3, mdp3)
     result3.plotKey = False
     curve3['action'] = result3.SVI(0.001)
-    V_action3 = result3.goal_probability(result3.Pi, result3.P, ((3, 3), 0), 0.001)
-
     t1 = time.time()
+    print("action time for task 3", t1 - t0)
+
+    V_action3 = result3.goal_probability(result3.Pi, result3.P, ((3, 3), 0), 0.001)
+    Policy3 = result3.policy_evaluation(result3.V)
+    print('rate for action is:', result3.evaluation(Policy3, result3.P, ((3, 5), 0), trial=trial_number))
     # print  "action time", t1 - t0
-    result3.AOpt = mdp.option_generation(dfa3, result.AOpt)
+    curve3['optimal'], Policy_hard3 = result3.Hardmax_SVI(0.001)
+    print('rate for baseline is:', result3.evaluation(Policy_hard3, result3.P, ((3, 5), 0), trial=trial_number))
+
+    result3.AOpt = mdp3.option_generation(dfa3, result.AOpt)
     # print (result2.AOpt.keys())
     # print (dfa2.alphabet)
     keys = dcp(list(result3.AOpt.keys()))
@@ -334,17 +371,21 @@ if __name__ == '__main__':
     t3 = time.time()
 
     curve3['option'] = result3.SVI_option(0.001)
+    print("option time for task 3", time.time() - t3)
+
     Policy3 = result3.policy_evaluation(result3.V)
     V_option3 = result3.goal_probability(Policy3, result3.P, ((3, 3), 0), 0.001)
     # print('rate for option is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
-
+    print('rate for option is:', result3.evaluation(Policy3, result3.P, ((3, 5), 0), trial=trial_number))
     t4 = time.time()
     curve3['hybrid'] = result3.SVI_option(0.001, hybrid=True)
+    print("hybrid time for task 3", time.time() - t4)
+
     Policy3 = result3.policy_evaluation(result3.V)
     V_hybrid3 = result3.goal_probability(Policy3, result3.P, ((3, 3), 0), 0.001)
     # print('rate for hybrid is:', result.evaluation(Policy, result.P, ((3, 7), 0), trial=10000))
     result3.plot_curve(curve3, 'compare_result_normalized_reward3')
-
+    print('rate for hybrid is:', result3.evaluation(Policy3, result3.P, ((3, 5), 0), trial=trial_number))
     print (V_action3)
     print (V_option3)
     print (V_hybrid3)

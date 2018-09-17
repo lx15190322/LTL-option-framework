@@ -736,6 +736,7 @@ class MDP:
 
         result.init_V, result.init_V_ = dcp(new_V), dcp(new_V_)
         result.init_R = dcp(new_R)
+        # print ("!!!!!!!!!!!!",result.T)
 
         return result
 
@@ -985,7 +986,7 @@ class MDP:
                         #     continue
 
 
-                    # if s[1] == 1 and s[0] == (2, 8):
+                    # if s[1] == 1 and s[0] ==self.R = dcp(self.init_R) (2, 8):
                     #     print(s[1])
 
                     if tuple([tuple(s), opt]) not in self.R:
@@ -1130,7 +1131,7 @@ class MDP:
             #     # # print   self.P
             # # # print   V_current, V_last
             it += 1
-        # print  "iterations:", it
+        print  ("action iterations:", it)
 
         if not self.plotKey:
             self.svi_record = special[len(special) - 1]
@@ -1139,6 +1140,7 @@ class MDP:
             print  ("action special point: ", special)
             print  ("action special point2: ", special2)
         # else:
+        #     self.option_plot()
         #     print (self.V)
 
             # # print  len(self.V), self.V
@@ -1148,6 +1150,74 @@ class MDP:
 
         return special
 
+    def Hardmax_SVI(self, threshold):
+        self.Pi, self.Pi_ = {}, {}
+        self.V, self.V_ = dcp(self.init_V), dcp(self.init_V_)
+        self.R = dcp(self.init_R)
+        self.Q = {}
+
+        V_current, V_last = self.Dict2Vec(self.V, self.S), self.Dict2Vec(self.V_, self.S)
+        it = 1
+        diff = []
+        val = []
+        special = []
+
+        diff.append(np.inner(V_current - V_last, V_current - V_last))
+
+        # while np.inner(V_current - V_last,
+        #                V_current - V_last) > threshold or it < 2:  # np.inner(V_current - V_last, V_current - V_last) > threshold
+        while it < len(self.action_special):
+            if it > 1 and threshold > 10000:
+                # print  "break"
+                break
+            # self.plot_map(it)
+
+            if tuple([(3, 3), 0]) in self.V:
+                special.append(self.V[(3, 3), 0])
+
+            for s in self.S:
+                self.V_[tuple(s)] = self.V[tuple(s)]
+
+                if tuple(s) not in self.Pi:  # for softmax
+                    self.Pi[tuple(s)] = {}
+                if tuple(s) not in self.Q:
+                    self.Q[tuple(s)] = {}
+
+            for s in self.S:
+
+                if tuple(s) not in self.T and tuple(s) not in self.interruptions:
+                    # # # print   s, self.T
+                    max_v, max_a = -1*self.INFTY, None
+
+                    for a in self.A:
+                        if (tuple(s), a) in self.P:
+
+                            if (tuple(s), a) not in self.R:
+                                self.R[tuple(s), a] = 0
+
+                            v = self.R[tuple(s), a] + self.gamma * self.Sigma_(tuple(s), a, self.V_)
+
+                            self.Q[tuple(s)][a] = v
+
+                            if v > max_v:
+                                max_v, max_a = v, a
+
+                    for choice in self.Q[tuple(s)]:
+                        self.Pi[tuple(s)][choice] = 0
+                    self.V[tuple(s)] = max_v
+                    self.Pi[tuple(s)][max_a] = 1.0
+
+            V_current, V_last = self.Dict2Vec(self.V, self.S), self.Dict2Vec(self.V_, self.S)
+            diff.append(np.inner(V_current - V_last, V_current - V_last))
+
+            it += 1
+        print("action iterations:", it)
+
+        if not self.plotKey:
+            self.svi_record = special[len(special) - 1]
+            print("hardmax action special point: ", special)
+
+        return special, self.Pi
 
     def policy_evaluation(self, initV):
         # S, A, P, R, sink, V, V_ = inS, inA, inP, inR, in_sink, inV, inV_
@@ -1202,6 +1272,9 @@ class MDP:
 
         return Pi
 
+    # def compute_divergence(self, Pi1, Pi2, S):
+    #
+    #     return KL
     # DISCARD
     '''
     def testPolicy(self, ss, Policy, S, A, V, P, dfa, mdp):
@@ -1237,7 +1310,7 @@ class MDP:
             s = tuple(state)
             if s not in V:
                 V[s], V_[s] = 0.0, 0.0
-            if state[1] == list(self.dfa.sink_states)[0]:
+            if state[1] == list(self.dfa.final_states)[0]:
                 V[s], V_[s] = 1.0, 0.0
 
         V_current, V_last = self.Dict2Vec(V, self.S), self.Dict2Vec(V_, self.S)
@@ -1280,7 +1353,7 @@ class MDP:
     def compute_norm(self, V, V_, level):
         V_current, V_last = self.Dict2Vec(V, self.S), self.Dict2Vec(V_, self.S)
         # norm = np.inner(V_current - V_last, V_current - V_last)
-        norm = np.linalg.norm(V_current - V_last, level)
+        norm = np.linalg.norm(V_current - V_last, level) / np.linalg.norm(V_last, level)
         print('norm level {}:'.format(level), norm)
 
 
@@ -1298,7 +1371,12 @@ class MDP:
             while st not in self.T:
                 piActs = list(Policy[st].keys())
                 piVals = list(Policy[st].values())
-                a = np.random.choice(piActs, 1, p = piVals)[0]
+                try:
+                    a = np.random.choice(piActs, 1, p = piVals)[0]
+                except ValueError:
+                    print('ERROR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                    print(piActs, st)
+                    print(self.T)
 
                 pNeighbors = list(P[st, a].keys())
                 pCode = range(len(pNeighbors))
@@ -1311,7 +1389,7 @@ class MDP:
                 st = pNeighbors[ns]
                 traj.append(st)
 
-                if st[1] == 4:
+                if st[1] == list(self.dfa.final_states)[0]: #TODO: fix this problem!!!!
                     # print ('goal:', st)
                     succeed += 1
             # print('nongoal:',st)
@@ -1352,7 +1430,7 @@ class MDP:
 
             fig = plt.figure()
             cax = plt.imshow(temp, interpolation='nearest')
-            cbar = fig.colorbar(cax)  # ticks=[-1, 0, 1]
+            # cbar = fig.colorbar(cax)  # ticks=[-1, 0, 1]
             plt.savefig(folder + name + ".png")  # "../DFA/comparing test/"
 
     # VIS: plotting heatmap using either matplotlib ot plotly to visualize value function for all options
@@ -1384,7 +1462,7 @@ class MDP:
 
             fig = plt.figure()
             cax = plt.imshow(temp, interpolation='nearest')
-            cbar = fig.colorbar(cax)  # ticks=[-1, 0, 1]
+            # cbar = fig.colorbar(cax)  # ticks=[-1, 0, 1]
             plt.savefig(folder + name + ".png")  # "../DFA/comparing test/"
 
         # title = "test_layers"
@@ -1462,7 +1540,7 @@ class MDP:
             fig = plt.figure()
             ax = plt.gca()
             cax = ax.imshow(temp)
-            cbar = fig.colorbar(cax) #ticks=[-1, 0, 1]
+            # cbar = fig.colorbar(cax) #ticks=[-1, 0, 1]
             ax.grid(which="minor", color="w", linestyle='-', linewidth=10)
             # plt.show()
             fig.savefig(folder + name + ".png")  # "../DFA/comparing test/"
@@ -1540,11 +1618,13 @@ class MDP:
         l1, = plt.plot(curve["action"], label="action")
         l2, = plt.plot(curve["option"], label="option")
         l3, = plt.plot(curve["hybrid"], label="hybrid")
+        l4, = plt.plot(curve["optimal"], label="optimal")
 
-        plt.legend(handles=[l1, l2, l3])
+        plt.legend(handles=[l1, l2, l3, l4])
 
         plt.ylabel('V-value')
-        plt.xlabel('episode')
+        plt.xlabel('iteration number')
+        plt.grid(True)
         plt.savefig(name + ".png")
 
     # VIS: Visulizing policy direction and weight in grid world
